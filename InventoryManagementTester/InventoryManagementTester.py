@@ -1,3 +1,7 @@
+from ctypes import alignment
+import tkinter as tk
+from tkinter import ttk
+
 from available_bays import bay_stack
 from inventory_dictionary import inventory_dictionary
 
@@ -61,3 +65,17 @@ for number in range(1,11):
 # print(inventory.get_next("FD FZ GY"))
 # print(inventory.get_next("FD FZ GY"))
 
+main_window = tk.Tk()
+main_window.title('Sheet Warehouse Manager')
+
+label = tk.Label(main_window, text = "Make a selection: ")
+view_inv_button = tk.Button(main_window, text = 'View Inventory', height=10, width = 50, command = main_window.destroy)
+add_inv_button = tk.Button(main_window, text = 'Add to Inventory', height=10, width = 50, command = main_window.destroy)
+pull_inv_button = tk.Button(main_window, text = 'Pull from Inventory',height=10, width = 50, command = main_window.destroy)
+
+label.grid(row = 0, column = 1)
+view_inv_button.grid(row=1, column=0)
+add_inv_button.grid(row = 1, column = 1)
+pull_inv_button.grid(row = 1, column = 2)
+
+main_window.mainloop()
